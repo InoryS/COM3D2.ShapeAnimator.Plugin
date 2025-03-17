@@ -1,80 +1,77 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9AAA1180-E788-460C-B767-5D663FD5D815}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace>COM3D2.ShapeAnimator.Plugin</RootNamespace>
-    <AssemblyName>COM3D2.ShapeAnimator.Plugin</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\Assembly-CSharp-firstpass.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ExIni">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\ExIni.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\System.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Configuration">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\System.Configuration.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\System.Xml.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\System.Xml.Linq.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityInjector">
-      <HintPath>\home\runner\work\COM3D2.ShapeAnimator.Plugin\COM3D2.ShapeAnimator.Plugin\lib\UnityInjector.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="COM3D2.ShapeAnimator.Plugin.cs" />
-  </ItemGroup>
-  <ItemGroup>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ProjectExtensions>
-    <VisualStudio AllowExistingFolder="true" />
-  </ProjectExtensions>
+<Project Sdk="Microsoft.NET.Sdk">
+
+<PropertyGroup>
+  <TargetFramework>net35</TargetFramework>
+  <AssemblyName>COM3D2.ShapeAnimator.Plugin</AssemblyName>
+  <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  <LangVersion>latest</LangVersion>
+  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  <RestoreAdditionalProjectSources>
+    https://api.nuget.org/v3/index.json;
+    https://nuget.bepinex.dev/v3/index.json;
+    https://nuget.samboy.dev/v3/index.json;
+  </RestoreAdditionalProjectSources>
+</PropertyGroup>
+
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <DebugSymbols>true</DebugSymbols>
+  <DebugType>full</DebugType>
+  <Optimize>false</Optimize>
+  <OutputPath>bin\Debug\</OutputPath>
+  <DefineConstants>DEBUG;TRACE</DefineConstants>
+  <ErrorReport>prompt</ErrorReport>
+  <WarningLevel>4</WarningLevel>
+</PropertyGroup>
+<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <DebugType>pdbonly</DebugType>
+  <Optimize>true</Optimize>
+  <OutputPath>bin\Release\</OutputPath>
+  <DefineConstants>TRACE</DefineConstants>
+  <ErrorReport>prompt</ErrorReport>
+  <WarningLevel>4</WarningLevel>
+</PropertyGroup>
+
+
+<ItemGroup>
+  <PackageReference Include="UnityEngine.Modules" Version="5.6.4" IncludeAssets="compile" />
+  <PackageReference Include="COM3D2.GameLibs" Version="2.39.0-r.0" />
+</ItemGroup>
+
+<ItemGroup>
+  <Reference Include="ExIni">
+    <HintPath>.\lib\\ExIni.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="System">
+    <HintPath>.\lib\\System.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="System.Configuration">
+    <HintPath>.\lib\\System.Configuration.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="System.Xml">
+    <HintPath>.\lib\System.Xml.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="System.Xml.Linq">
+    <HintPath>.\lib\System.Xml.Linq.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="UnityEngine">
+    <HintPath>.\lib\UnityEngine.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+  <Reference Include="UnityInjector">
+    <HintPath>.\lib\UnityInjector.dll</HintPath>
+    <Private>False</Private>
+  </Reference>
+</ItemGroup>
+
+
+<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+  <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+</ItemGroup>
+
 </Project>
